@@ -1,9 +1,53 @@
-.result {
-	max-width: 60ch;
-	line-height: 1.5;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,900;1,300&family=Poppins&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-	background-color: #333;
+	background-color: #121213;
 	color: white;
+	display: grid;
+	justify-content: center;
+	justify-items: center;
+}
+
+h1 {
+	font-family: 'Merriweather';
+	font-weight: 900;
+	font-size: 2rem;
+	margin: 1rem;
+}
+
+form {
+	margin: 1em;
+	display: flex;
+	justify-content: center;
+}
+
+.letter,
+#submit {
+	text-align: center;
+	width: 3rem;
+	height: 3rem;
+	margin: 2px;
+	background-color: #818384;
+	border: none;
+	color: white;
+	border-radius: 4px;
+}
+
+.letter {
+	font-size: 2rem;
+}
+
+.result {
+	margin: 2em;
+	max-width: 60ch;
+	line-height: 1.5;
+	background-color: #333;
+	border-radius: 4px;
+	padding: 1em;
 }

@@ -1,6 +1,13 @@
 const submit = document.querySelector('#submit');
 const letters = document.querySelectorAll('.letter');
 const result = document.querySelector('.result');
+
+// letters.forEach((letter) => {
+// 	letter.addEventListener('input', () => {
+// 		letter.value = letter.value.toUpperCase();
+// 	});
+// });
+
 submit.addEventListener('click', () => {
 	result.textContent = '';
 	let suggestion = [...words];
@@ -26,6 +33,7 @@ submit.addEventListener('click', () => {
 	suggestion.forEach((word) => (result.textContent += word + ', '));
 	result.textContent =
 		result.textContent.slice(0, result.textContent.length - 2) + '.';
+	result.display = 'block';
 });
 
 const words = [
