@@ -14,6 +14,8 @@ body {
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Poppins';
+	overflow-x: hidden;
+	width: 100%;
 }
 
 header {
@@ -34,7 +36,7 @@ form {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	width: 600px;
+	width: 400px;
 	gap: 5px;
 }
 
@@ -60,13 +62,13 @@ form {
 .letters {
 	flex: 100%;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	gap: 5px;
 }
 
 .filters {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	gap: 5px;
 }
@@ -75,12 +77,12 @@ form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 28%;
+	width: 50%;
 }
 
 label {
 	margin-bottom: 5px;
-	font-size: 1.15rem;
+	font-size: clamp(0.8rem, 2.5vw, 1.25rem);
 }
 
 #including,
@@ -95,7 +97,7 @@ label {
 }
 
 #submit {
-	width: 57%;
+	width: 100%;
 	font-size: 1.5rem;
 }
 
@@ -106,12 +108,31 @@ label {
 
 .result {
 	text-align: center;
-	font-size: 1.15rem;
+	font-size: clamp(0.8rem, 2.5vw, 1.25rem);
 	margin: 2em;
-	max-width: 60ch;
+	width: clamp(250px, 45ch, 900px);
 	line-height: 1.5;
 	background-color: #333;
 	border-radius: 4px;
 	padding: 1em;
 	display: none;
+}
+
+@media (max-width: 600px) {
+	form,
+	.result {
+		margin: 16px;
+		max-width: 300px;
+	}
+	.letter {
+		width: 3rem;
+		height: 3rem;
+		font-size: 1.5rem;
+	}
+
+	#including,
+	#excluding,
+	#submit {
+		height: 3rem;
+	}
 }
