@@ -9,45 +9,108 @@
 body {
 	background-color: #121213;
 	color: white;
-	display: grid;
-	justify-content: center;
-	justify-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Poppins';
+}
+
+header {
+	width: 100%;
+	text-align: center;
+	border-bottom: 1px solid #3a3a3c;
 }
 
 h1 {
 	font-family: 'Merriweather';
 	font-weight: 900;
 	font-size: 2rem;
-	margin: 1rem;
+	margin: 8px;
 }
 
 form {
-	margin: 1em;
+	margin-top: 5rem;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 600px;
+	gap: 5px;
+}
+
+.search {
+	flex: 100%;
 	display: flex;
 	justify-content: center;
 }
 
 .letter,
 #submit {
+	font-family: inherit;
 	text-align: center;
-	width: 3rem;
-	height: 3rem;
-	margin: 2px;
-	background-color: #818384;
-	border: none;
+	width: 4rem;
+	height: 4rem;
+	background-color: inherit;
+	border: 1px solid #818384;
 	color: white;
 	border-radius: 4px;
-}
-
-.letter {
 	font-size: 2rem;
 }
 
+.letters {
+	flex: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+}
+
+.filters {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+
+.filter {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 28%;
+}
+
+label {
+	margin-bottom: 5px;
+	font-size: 1.15rem;
+}
+
+#including,
+#excluding {
+	width: 100%;
+	background-color: inherit;
+	border: 1px solid #818384;
+	color: white;
+	height: 4rem;
+	font-size: 2rem;
+	text-align: center;
+}
+
+#submit {
+	width: 57%;
+	font-size: 1.5rem;
+}
+
+#submit:hover {
+	background-color: white;
+	color: #121213;
+}
+
 .result {
+	font-size: 1.15rem;
 	margin: 2em;
 	max-width: 60ch;
 	line-height: 1.5;
 	background-color: #333;
 	border-radius: 4px;
 	padding: 1em;
+	display: none;
 }

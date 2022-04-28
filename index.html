@@ -9,16 +9,73 @@
 		<script src="script.js" defer></script>
 	</head>
 	<body>
-		<nav>
+		<header>
 			<h1>Wordle Helper</h1>
-		</nav>
+		</header>
 		<form action="submit">
-			<input class="letter" id="first" type="text" />
-			<input class="letter" id="second" type="text" />
-			<input class="letter" id="third" type="text" />
-			<input class="letter" id="fourth" type="text" />
-			<input class="letter" id="fifth" type="text" />
-			<input id="submit" type="button" value="Enter" />
+			<div class="letters">
+				<input
+					class="letter"
+					id="first"
+					type="text"
+					autocomplete="off"
+					maxlength="1"
+				/>
+				<input
+					class="letter"
+					id="second"
+					type="text"
+					autocomplete="off"
+					maxlength="1"
+				/>
+				<input
+					class="letter"
+					id="third"
+					type="text"
+					autocomplete="off"
+					maxlength="1"
+				/>
+				<input
+					class="letter"
+					id="fourth"
+					type="text"
+					autocomplete="off"
+					maxlength="1"
+				/>
+				<input
+					class="letter"
+					id="fifth"
+					type="text"
+					autocomplete="off"
+					maxlength="1"
+				/>
+			</div>
+			<div class="filters">
+				<div class="filter">
+					<label for="excluding">Excluding Letters</label>
+					<input
+						class="letter filter-input"
+						id="excluding"
+						type="text"
+						autocomplete="off"
+						name="excluding"
+					/>
+				</div>
+				<div class="filter">
+					<label for="including">Including Letters</label>
+
+					<input
+						class="letter filter-input"
+						id="including"
+						type="text"
+						autocomplete="off"
+					/>
+				</div>
+			</div>
+
+			<div class="search">
+				<input id="submit" type="submit" value="Search" />
+			</div>
 		</form>
 		<p class="result"></p>
 	</body>

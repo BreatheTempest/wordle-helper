@@ -2,38 +2,46 @@ const submit = document.querySelector('#submit');
 const letters = document.querySelectorAll('.letter');
 const result = document.querySelector('.result');
 
-// letters.forEach((letter) => {
-// 	letter.addEventListener('input', () => {
-// 		letter.value = letter.value.toUpperCase();
-// 	});
-// });
+letters.forEach((letter) => {
+	letter.addEventListener('input', () => {
+		letter.value = letter.value.toUpperCase();
+	});
+});
 
-submit.addEventListener('click', () => {
+submit.addEventListener('click', (e) => {
+	e.preventDefault();
 	result.textContent = '';
 	let suggestion = [...words];
 	letters.forEach((letter) => {
-		if (letter.value !== '') {
+		let value = letter.value.toLowerCase();
+		if (value !== '') {
 			if (letter.id === 'first') {
-				suggestion = suggestion.filter((word) => word[0] === letter.value);
+				suggestion = suggestion.filter((word) => word[0] === value);
 			}
 			if (letter.id === 'second') {
-				suggestion = suggestion.filter((word) => word[1] === letter.value);
+				suggestion = suggestion.filter((word) => word[1] === value);
 			}
 			if (letter.id === 'third') {
-				suggestion = suggestion.filter((word) => word[2] === letter.value);
+				suggestion = suggestion.filter((word) => word[2] === value);
 			}
 			if (letter.id === 'fourth') {
-				suggestion = suggestion.filter((word) => word[3] === letter.value);
+				suggestion = suggestion.filter((word) => word[3] === value);
 			}
 			if (letter.id === 'fifth') {
-				suggestion = suggestion.filter((word) => word[4] === letter.value);
+				suggestion = suggestion.filter((word) => word[4] === value);
 			}
 		}
 	});
-	suggestion.forEach((word) => (result.textContent += word + ', '));
+	suggestion = suggestion.sort();
+	suggestion.forEach(
+		(word) =>
+			(result.textContent += `${word[0].toUpperCase() + word.slice(1)}, `)
+	);
 	result.textContent =
-		result.textContent.slice(0, result.textContent.length - 2) + '.';
-	result.display = 'block';
+		result.textContent === ''
+			? 'No results!'
+			: result.textContent.slice(0, result.textContent.length - 2) + '.';
+	result.style.display = 'block';
 });
 
 const words = [
