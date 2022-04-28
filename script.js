@@ -30,6 +30,24 @@ submit.addEventListener('click', (e) => {
 			if (letter.id === 'fifth') {
 				suggestion = suggestion.filter((word) => word[4] === value);
 			}
+			if (letter.id === 'excluding') {
+				value = value.replace(/[\W\d_]/g, '').split('');
+				suggestion = suggestion.filter((word) => {
+					for (let ltr of value) {
+						if (word.includes(ltr)) return false;
+					}
+					return true;
+				});
+			}
+			if (letter.id === 'including') {
+				value = value.replace(/[\W\d_]/g, '').split('');
+				suggestion = suggestion.filter((word) => {
+					for (let ltr of value) {
+						if (!word.includes(ltr)) return false;
+					}
+					return true;
+				});
+			}
 		}
 	});
 	suggestion = suggestion.sort();
