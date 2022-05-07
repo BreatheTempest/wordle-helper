@@ -4,7 +4,7 @@ const result = document.querySelector('.result');
 
 function columns(words) {
 	if (words.length < 15) {
-		result.style.width = '5ch';
+		result.style.width = '11ch';
 		result.style.columns = '1';
 	} else {
 		result.style.columns = '5ch';
