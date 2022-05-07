@@ -106,16 +106,23 @@ label {
 	color: #121213;
 }
 
+.result-container {
+	border-radius: 4px;
+	margin: 2em;
+	width: clamp(250px, 45ch, 900px);
+	background-color: #333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .result {
 	text-align: center;
 	font-size: clamp(0.8rem, 2.5vw, 1.25rem);
-	margin: 2em;
-	width: clamp(250px, 45ch, 900px);
-	line-height: 1.5;
-	background-color: #333;
-	border-radius: 4px;
-	padding: 1em;
+	line-height: 1.6;
+	margin: 1rem;
 	display: none;
+	columns: 5;
 }
 
 @media (max-width: 600px) {

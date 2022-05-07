@@ -2,6 +2,16 @@ const submit = document.querySelector('#submit');
 const letters = document.querySelectorAll('.letter');
 const result = document.querySelector('.result');
 
+function columns(words) {
+	if (words.length < 15) {
+		result.style.width = '5ch';
+		result.style.columns = '1';
+	} else {
+		result.style.columns = '5ch';
+		result.style.width = 'auto';
+	}
+}
+
 letters.forEach((letter) => {
 	letter.addEventListener('input', () => {
 		letter.value = letter.value.toUpperCase();
@@ -51,14 +61,16 @@ submit.addEventListener('click', (e) => {
 		}
 	});
 	suggestion = suggestion.sort();
+
+	columns(suggestion);
+
 	suggestion.forEach(
 		(word) =>
-			(result.textContent += `${word[0].toUpperCase() + word.slice(1)}, `)
+			(result.textContent += `${word[0].toUpperCase() + word.slice(1)} `)
 	);
+
 	result.textContent =
-		result.textContent === ''
-			? 'No results!'
-			: result.textContent.slice(0, result.textContent.length - 2) + '.';
+		result.textContent === '' ? 'No results!' : result.textContent;
 	result.style.display = 'block';
 });
 
