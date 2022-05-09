@@ -3,7 +3,7 @@ const letters = document.querySelectorAll('.letter');
 const result = document.querySelector('.result');
 
 function columns(words) {
-	if (words.length < 15) {
+	if (words.length < 12) {
 		result.style.width = '11ch';
 		result.style.columns = '1';
 	} else {

@@ -109,10 +109,10 @@ label {
 .result-container {
 	border-radius: 4px;
 	margin: 2em;
-	width: clamp(250px, 45ch, 900px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	width: clamp(250px, 45ch, 900px);
 }
 
 .result {
@@ -124,6 +124,8 @@ label {
 	margin: 1rem;
 	display: none;
 	columns: 5;
+	max-height: 500px;
+	overflow-x: scroll;
 }
 
 @media (max-width: 600px) {
